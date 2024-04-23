@@ -1,0 +1,17 @@
+<%= form_with model: [ @article, @article.comments.build ] do |f| %>
+  <p>
+    <%= f.label :commenter %><br>
+    <%= f.text_field :commenter %>
+  </p>
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.label :status %><br>
+    <%= f.select :status, Visible::VALID_STATUSES, selected: 'public' %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
