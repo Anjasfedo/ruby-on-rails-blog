@@ -14,6 +14,10 @@
     <% end %>
   </div>
   <div>
+    <%= f.label :status %><br>
+    <%= f.select :status, Visible::VALID_STATUSES, selected: article.status || 'public' %>
+  </div>
+  <div>
     <%= f.submit 'Submit', disable_with: 'Submiting...' %>
   </div>
 <% end %>
